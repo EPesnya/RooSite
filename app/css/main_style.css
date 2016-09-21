@@ -1,97 +1,162 @@
-.body_slides{
-    list-style:none;
-    margin:0;
-    padding:0;
-    z-index:0; 
-    background:#000;}
-.body_slides,
-.body_slides:after{
-    width:100%;
-    height:100%;
-    top:0px;
-    left:0px;}
-.body_slides:after { 
-    content: '';
-    background: transparent url(../img/slider/1.jpg) repeat top left;
-}
- 
- 
-.body_slides li{
-    width:100%;
-    height:100%;
-    position:absolute;
-    top:0;
-    left:0;
-    background-size:cover;
-    background-repeat:none;
-    opacity:0;
-    -webkit-animation: anim_slides 24s linear infinite 0s;
-    -moz-animation: anim_slides 24s linear infinite 0s;
-    -o-animation: anim_slides 24s linear infinite 0s;
-    -ms-animation: anim_slides 24s linear infinite 0s;
-    animation: anim_slides 24s linear infinite 0s;
-}
-.body_slides li:nth-child(1){
-    background-image: url(../img/slider/1.jpg); 
-}
-.body_slides li:nth-child(2){
-    -webkit-animation-delay: 6.0s;
-    -moz-animation-delay: 6.0s;
-    background-image: url(../img/slider/2.jpg); 
-}
-.body_slides li:nth-child(3){
-    -webkit-animation-delay: 12.0s;
-    -moz-animation-delay: 12.0s;
-    background-image: url(../img/slider/3.jpg); 
-}
-.body_slides li:nth-child(4){
-    -webkit-animation-delay: 18.0s;
-    -moz-animation-delay: 18.0s;
-    background-image: url(../img/slider/4.jpg); 
-}
-@-webkit-keyframes anim_slides {
-    0% {opacity:0;}
-    6% {opacity:1;}
-    24% {opacity:1;}
-    30% {opacity:0;}
-    100% {opacity:0;}
-}
-@-moz-keyframes anim_slides {
-    0% {opacity:0;}
-    6% {opacity:1;}
-    24% {opacity:1;}
-    30% {opacity:0;}
-    100% {opacity:0;}
+/*
+ * Globals
+ */
+
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #fff;
 }
 
-#math
-{
-    margin: 0;
-    padding: 20px;
-}
-#phys
-{
-    margin: 0;
-    padding: 20px;
-}
-#chem
-{
-    margin: 0;
-    padding: 20px;
+/* Custom default button */
+.btn-default,
+.btn-default:hover,
+.btn-default:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritence from `body` */
+  background-color: #fff;
+  border: 1px solid #fff;
 }
 
-#mathHidedDiv
-{
-    background-color: #8948E9;
-    padding: 5%;
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+  height: 100%;
+  background-image: url("/img/pexels-photo-11819.jpeg");
+  background-size: 100%;
 }
-#chemHidedDiv
-{
-    background-color: #8948E9;
-    padding: 5%;
+body {
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+  box-shadow: inset 0 0 100px rgba(0,0,0,.5);
 }
-#physHidedDiv
-{
-    background-color: #8948E9;
-    padding: 5%;
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%; /* For at least Firefox */
+  min-height: 100%;
+}
+.site-wrapper-inner {
+  display: table-cell;
+  vertical-align: top;
+}
+.cover-container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Padding for spacing */
+.inner {
+  padding: 30px;
+}
+
+
+/*
+ * Header
+ */
+.masthead-brand {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.masthead-nav > li {
+  display: inline-block;
+}
+.masthead-nav > li + li {
+  margin-left: 20px;
+}
+.masthead-nav > li > a {
+  padding-right: 0;
+  padding-left: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff; /* IE8 proofing */
+  color: rgba(255,255,255,.75);
+  border-bottom: 2px solid transparent;
+}
+.masthead-nav > li > a:hover,
+.masthead-nav > li > a:focus {
+  background-color: transparent;
+  border-bottom-color: rgba(255,255,255,.25);
+}
+.masthead-nav > .active > a,
+.masthead-nav > .active > a:hover,
+.masthead-nav > .active > a:focus {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+@media (min-width: 768px) {
+  .masthead-brand {
+    float: left;
+  }
+  .masthead-nav {
+    float: right;
+  }
+}
+
+
+/*
+ * Cover
+ */
+
+.cover {
+  padding: 0 20px;
+}
+.cover .btn-lg {
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+
+/*
+ * Footer
+ */
+
+.mastfoot {
+  color: #999; /* IE8 proofing */
+  color: rgba(255,255,255,.5);
+}
+
+
+/*
+ * Affix and center
+ */
+
+@media (min-width: 768px) {
+  /* Pull out the header and footer */
+  .masthead {
+    position: fixed;
+    top: 0;
+  }
+  .mastfoot {
+    position: fixed;
+    bottom: 0;
+  }
+  /* Start the vertical centering */
+  .site-wrapper-inner {
+    vertical-align: middle;
+  }
+  /* Handle the widths */
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+  }
+}
+
+@media (min-width: 992px) {
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 700px;
+  }
 }
