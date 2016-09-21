@@ -1,0 +1,22 @@
+{
+  "name": "NewProj",
+  "dependencies": {
+    "jquery": "^2.2.4",
+    "bootstrap": "^3.3.6"
+  },
+  "homepage": "https://github.com/EPesnya/NewProj",
+  "authors": [
+    "SanQri <galiullinnikolai@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower",
+    "test",
+    "tests"
+  ]
+}
